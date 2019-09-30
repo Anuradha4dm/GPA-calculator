@@ -3,6 +3,7 @@ package components;
 import java.awt.*;
 import java.awt.Font;
 import java.awt.event.*;
+import components.Component2;
 
 
 public class Component1 extends Frame implements ActionListener ,WindowListener{
@@ -25,7 +26,7 @@ public class Component1 extends Frame implements ActionListener ,WindowListener{
 
         //register with actionListener
 
-        b2.addActionListener(this); 
+        b1.addActionListener(this); 
         addWindowListener(this); 
 
         //fonts Section
@@ -50,7 +51,7 @@ public class Component1 extends Frame implements ActionListener ,WindowListener{
     }
 
     public void actionPerformed(ActionEvent e){
-        System.out.println("click");
+        Component2 c2=new Component2();
     }
 
     public void controlCheckBax(){
@@ -77,6 +78,7 @@ public class Component1 extends Frame implements ActionListener ,WindowListener{
 
     public void windowDeactivated(WindowEvent args0){
         System.out.println("deactivate");
+        dispose();
     }
 
     public void windowDeiconified(WindowEvent args0){
@@ -93,6 +95,7 @@ public class Component1 extends Frame implements ActionListener ,WindowListener{
 
     public void windowClosing(WindowEvent args0){
         System.out.println("Closing");
+        dispose();  
     }
 
     public void windowOpened(WindowEvent args0){
